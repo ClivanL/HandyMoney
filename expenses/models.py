@@ -4,6 +4,7 @@ from django.db import models
 
 class Person(models.Model):
     personName=models.CharField(max_length=100)
+    groupName=models.CharField(max_length=100, default="default")
 
 class Receipts(models.Model):
     payer=models.CharField(max_length=100,default="user")

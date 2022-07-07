@@ -15,7 +15,7 @@ class ReceiptSerializer(serializers.HyperlinkedModelSerializer):
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Person
-        fields=['id','personName']
+        fields=['id','personName','groupName']
 
 class ItemToPersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
