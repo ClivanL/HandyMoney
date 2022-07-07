@@ -23,3 +23,8 @@ class ItemToPersonViewSet(viewsets.ModelViewSet):
     queryset=ItemToPerson.objects.all()
     serializer_class=ItemToPersonSerializer
     permission_classes=[permissions.AllowAny]
+
+class GroupViewSet(viewsets.ModelViewSet):
+    queryset=Person.objects.values("groupName")
+    serializer_class=PersonSerializer
+    permission_classes=[permissions.AllowAny]
