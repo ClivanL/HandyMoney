@@ -7,6 +7,7 @@ class Person(models.Model):
 
 class Receipts(models.Model):
     payer=models.CharField(max_length=100,default="user")
+    details=models.CharField(max_length=100, default="not entered")
     person=models.ForeignKey(Person, on_delete=models.CASCADE)
 
 class Items(models.Model):
