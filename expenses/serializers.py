@@ -10,7 +10,7 @@ class ItemSerializer(serializers.HyperlinkedModelSerializer):
 class ReceiptSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Receipts
-        fields=['id','receiptId', 'payer','person']
+        fields=['id', 'payer','person']
 
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
