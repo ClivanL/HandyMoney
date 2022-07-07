@@ -25,6 +25,6 @@ class ItemToPersonViewSet(viewsets.ModelViewSet):
     permission_classes=[permissions.AllowAny]
 
 class GroupViewSet(viewsets.ModelViewSet):
-    queryset=Person.objects.values("groupName")
+    queryset=Person.objects.values_list("groupName", flat=True)
     serializer_class=PersonSerializer
     permission_classes=[permissions.AllowAny]
