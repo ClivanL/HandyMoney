@@ -17,7 +17,13 @@ class Receipt(models.Model):
 class Item(models.Model):
     itemName=models.CharField(max_length=100)
     price=models.IntegerField()
-    receipt=models.ForeignKey(Receipt, on_delete=models.CASCADE)
+    # receipt=models.ForeignKey(Receipt, on_delete=models.CASCADE)
+
+
+
+
+
+
 
 # class ItemToPerson(models.Model):
 #     item=models.ForeignKey(Item,on_delete=models.CASCADE)
