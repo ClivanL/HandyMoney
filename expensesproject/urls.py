@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-from expenses.views import PersonViewSet, ReceiptViewSet, ItemViewSet, PartyViewSet
+from expenses.views import PersonViewSet, ReceiptViewSet, ItemViewSet
 
 from expenses import views
 
@@ -25,7 +25,7 @@ router.register(r'person', PersonViewSet, basename="person")
 router.register(r'receipt', ReceiptViewSet, basename="receipt")
 router.register(r'item', ItemViewSet, basename="item")
 # router.register(r'itemstoperson', ItemToPersonViewSet, basename="itemstoperson")
-router.register(r'party',PartyViewSet, basename="party")
+# router.register(r'party',PartyViewSet, basename="party")
 
 urlpatterns = [
     path('admin/', admin.site.urls),

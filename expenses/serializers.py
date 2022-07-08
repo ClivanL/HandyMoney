@@ -1,16 +1,12 @@
-from .models import Person, Receipt, Item, Party
+from .models import Person, Receipt, Item
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
-class PartySerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model=Party
-        fields=['id','partyName']
-
-# class ItemSerializer(serializers.HyperlinkedModelSerializer):
+# class PartySerializer(serializers.HyperlinkedModelSerializer):
 #     class Meta:
-#         model=Item
-#         fields=['id','itemName', 'price','receipt']
+#         model=Party
+#         fields=['id','partyName']
+
 
 class ReceiptSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
