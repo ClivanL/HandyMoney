@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 
-# class Party(models.Model):
-#     partyName=models.CharField(max_length=100, default="default")
+class Party(models.Model):
+    partyName=models.CharField(max_length=100, default="default")
 
 class Person(models.Model):
     personName=models.CharField(max_length=100)
