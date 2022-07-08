@@ -1,7 +1,8 @@
 from .models import Receipts, Items,Person, ItemToPerson
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import PersonSerializer, ReceiptSerializer, ItemSerializer, ItemToPersonSerializer
+from .serializers import PersonSerializer, ReceiptSerializer, ItemSerializer, ItemToPersonSerializer, GroupSerializer
+from rest_framework.response import Response
 
 # Create your views here.
 class PersonViewSet(viewsets.ModelViewSet):
@@ -25,6 +26,5 @@ class ItemToPersonViewSet(viewsets.ModelViewSet):
     permission_classes=[permissions.AllowAny]
 
 class GroupViewSet(viewsets.ModelViewSet):
-    queryset=Person.objects.values_list("groupName", flat=True)
-    serializer_class=PersonSerializer
-    permission_classes=[permissions.AllowAny]
+    queryset=Person.objects.all()
+    serializer_class=GroupSerializer

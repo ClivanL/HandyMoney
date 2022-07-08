@@ -21,3 +21,8 @@ class ItemToPersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=ItemToPerson
         fields=['id','item', 'person']
+
+class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model=Person
+        fields=['id','groupName']
