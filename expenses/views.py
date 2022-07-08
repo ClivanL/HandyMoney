@@ -1,7 +1,7 @@
-from .models import Receipts, Items,Person, ItemToPerson
+from .models import Receipt, Item,Person, Party
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import PersonSerializer, ReceiptSerializer, ItemSerializer, ItemToPersonSerializer, GroupSerializer
+from .serializers import PersonSerializer, ReceiptSerializer, ItemSerializer,PartySerializer
 from rest_framework.response import Response
 
 # Create your views here.
@@ -11,20 +11,20 @@ class PersonViewSet(viewsets.ModelViewSet):
     permission_classes=[permissions.AllowAny]
 
 class ReceiptViewSet(viewsets.ModelViewSet):
-    queryset=Receipts.objects.all()
+    queryset=Receipt.objects.all()
     serializer_class=ReceiptSerializer
     permission_classes=[permissions.AllowAny]
 
 class ItemViewSet(viewsets.ModelViewSet):
-    queryset=Items.objects.all()
+    queryset=Item.objects.all()
     serializer_class=ItemSerializer
     permission_classes=[permissions.AllowAny]
 
-class ItemToPersonViewSet(viewsets.ModelViewSet):
-    queryset=ItemToPerson.objects.all()
-    serializer_class=ItemToPersonSerializer
-    permission_classes=[permissions.AllowAny]
+# class ItemToPersonViewSet(viewsets.ModelViewSet):
+#     queryset=ItemToPerson.objects.all()
+#     serializer_class=ItemToPersonSerializer
+#     permission_classes=[permissions.AllowAny]
 
-class GroupViewSet(viewsets.ModelViewSet):
-    queryset=Person.objects.all()
-    serializer_class=GroupSerializer
+class PartyViewSet(viewsets.ModelViewSet):
+    queryset=Party.objects.all()
+    serializer_class=PartySerializer
