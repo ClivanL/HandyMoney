@@ -23,3 +23,4 @@ class ItemViewSet(viewsets.ModelViewSet):
 class PartyViewSet(viewsets.ModelViewSet):
     queryset=Party.objects.all()
     serializer_class=PartySerializer
+    permission_classes=[permissions.AllowAny]

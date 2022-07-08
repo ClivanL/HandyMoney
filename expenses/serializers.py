@@ -11,23 +11,15 @@ class PartySerializer(serializers.HyperlinkedModelSerializer):
 class ReceiptSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Receipt
-        fields=['id', 'payer','details']
+        fields=['id', 'payer','details','party']
 
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Person
-        fields=['id','personName']
+        fields=['id','personName','party']
 
 
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
-    # itemName = serializers.HyperlinkedIdentityField(
-    #     view_name='item-detail'
-    # )
-    # receipt = serializers.HyperlinkedRelatedField(
-    #     view_name='receipt-detail',
-    #     # many=True,
-    #     read_only=True
-    # )
     class Meta:
         model=Item
         fields=['id','itemName', 'price','receipt']
