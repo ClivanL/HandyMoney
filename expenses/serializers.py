@@ -11,12 +11,12 @@ from rest_framework import serializers
 class ReceiptSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Receipt
-        fields=['id', 'payer','party','details']
+        fields=['id', 'payer','details']
 
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model=Person
-        fields=['id','personName','party']
+        fields=['id','personName']
 
 
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
