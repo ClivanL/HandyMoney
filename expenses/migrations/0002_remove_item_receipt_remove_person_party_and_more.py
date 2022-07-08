@@ -11,10 +11,6 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RemoveField(
-            model_name='item',
-            name='receipt',
-        ),
-        migrations.RemoveField(
             model_name='person',
             name='party',
         ),
