@@ -16,7 +16,7 @@ class Receipt(models.Model):
 
 class Item(models.Model):
     itemName=models.CharField(max_length=100)
-    price=models.IntegerField()
+    price=models.FloatField()
     receipt=models.ForeignKey(Receipt, on_delete=models.CASCADE)
 
 
