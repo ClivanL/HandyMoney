@@ -6,21 +6,22 @@ from rest_framework.response import Response
 
 # Create your views here.
 class PersonViewSet(viewsets.ModelViewSet):
-    queryset=Person.objects.all()
+    queryset=Person.objects.all().order_by('id')
     serializer_class=PersonSerializer
     permission_classes=[permissions.AllowAny]
+    
 
 class ReceiptViewSet(viewsets.ModelViewSet):
-    queryset=Receipt.objects.all()
+    queryset=Receipt.objects.all().order_by('id')
     serializer_class=ReceiptSerializer
     permission_classes=[permissions.AllowAny]
 
 class ItemViewSet(viewsets.ModelViewSet):
-    queryset=Item.objects.all()
+    queryset=Item.objects.all().order_by('id')
     serializer_class=ItemSerializer
     permission_classes=[permissions.AllowAny]
 
 class PartyViewSet(viewsets.ModelViewSet):
-    queryset=Party.objects.all()
+    queryset=Party.objects.all().order_by('id')
     serializer_class=PartySerializer
     permission_classes=[permissions.AllowAny]
