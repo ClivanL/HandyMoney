@@ -7,26 +7,17 @@ class Party(models.Model):
 
 class Person(models.Model):
     personName=models.CharField(max_length=100)
-    party=models.ForeignKey(Party, related_name="person", on_delete=models.CASCADE)
-
-    def __str__(self):
-        return '%s' % (self.personName)
+    party=models.ForeignKey(Party,on_delete=models.CASCADE)
 
 class Receipt(models.Model):
-    payer=models.ForeignKey(Person, on_delete=models.CASCADE)
+    payer=models.CharField(max_length=100,default="user")
     details=models.CharField(max_length=100, default="not entered")
-    party=models.ForeignKey(Party, related_name="receipt", on_delete=models.CASCADE)
-
-    def __str__(self):
-        return '%s %s' % (self.details, self.payer)
+    party=models.ForeignKey(Party, on_delete=models.CASCADE)
 
 class Item(models.Model):
     itemName=models.CharField(max_length=100)
     price=models.FloatField()
-    receipt=models.ForeignKey(Receipt, related_name="item",on_delete=models.CASCADE)
-
-    def __str__(self):
-        return '%s %f' % (self.itemName, self.price)
+    receipt=models.ForeignKey(Receipt, on_delete=models.CASCADE)
 
 
 
